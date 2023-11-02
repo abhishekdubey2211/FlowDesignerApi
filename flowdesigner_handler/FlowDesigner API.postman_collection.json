@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "373140a2-6613-4738-9628-34336db6d3b1",
+		"name": "FlowDesigner API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "editFlowdesignByFlowName",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"flowname\": \"MovieBotzz\",\n      \"active\": 1,\n      \"flowdetails\": \"[{\\\"step\\\":\\\"firststep\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Hello and welcome to the Visa Hub online assistance service! We`re here to help you with your visa-related questions and concerns. How can we assist you today?\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"},{\\\"step\\\":\\\"satisfied\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Is there anything else I can assist you with?\\\",\\\"options\\\":[{\\\"text\\\":\\\"Yes\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Yes\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"},{\\\"text\\\":\\\"No\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"No\\\",\\\"nextstep\\\":\\\"thanks\\\"}]},{\\\"step\\\":\\\"thanks\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Thank you for chatting with me today! I hope I was able to assist you with your questions and concerns.\\\"},{\\\"step\\\":\\\"notsatified\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Please wait while we connect you to our customer support assistant.\\\"},{\\\"step\\\":\\\"AfterTemplate\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please select query type\\\",\\\"options\\\":[{\\\"text\\\":\\\"Visa Application\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa Application\\\",\\\"nextstep\\\":\\\"invsa1\\\"},{\\\"text\\\":\\\"Payment Refund\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Payment Refund\\\",\\\"nextstep\\\":\\\"inpayment2\\\"},{\\\"text\\\":\\\"Complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Complaints\\\",\\\"nextstep\\\":\\\"incomplaints3\\\"},{\\\"text\\\":\\\"Assistance\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Assistance\\\",\\\"nextstep\\\":\\\"inassistance4\\\"}]},{\\\"step\\\":\\\"invsa1\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Visa Application\\\",\\\"options\\\":[{\\\"text\\\":\\\"Track Application Status\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Track Application Status\\\",\\\"nextstep\\\":\\\"trackapplication\\\"},{\\\"text\\\":\\\"Appointments\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Appointments\\\",\\\"nextstep\\\":\\\"appointments\\\"},{\\\"text\\\":\\\"Visa centre selection\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa centre selection\\\",\\\"nextstep\\\":\\\"visacenter\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"trackapplication\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, click Track application status and you will be able to see the current status of your application.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"appointments\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Appointments\\\",\\\"options\\\":[{\\\"text\\\":\\\"Book appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Book appointment\\\",\\\"nextstep\\\":\\\"bookappointment\\\"},{\\\"text\\\":\\\"Reschedule appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Reschedule appointment\\\",\\\"nextstep\\\":\\\"rescheduleappointment\\\"},{\\\"text\\\":\\\"Unable to book appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Unable to book appointment\\\",\\\"nextstep\\\":\\\"unabletobookappointment\\\"},{\\\"text\\\":\\\"Incomplete appointment confirmation\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Incomplete appointment confirmation\\\",\\\"nextstep\\\":\\\"incompleteappointment\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"bookappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, select Book Appointment, Calendar will appear and now choose the date and time of your choice.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"rescheduleappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, select Manage Appointment, open the Appointment Details section and select Reschedule Appointment and choose the date and time as per your choice.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"unabletobookappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please ensure that there are no problems with your computer or phone (i.e. poor broadband or Wi-Fi connection, old browser versions, etc). If you have confirmed this, and are still having issues then please screenshot the error page(s), and connect with our live assistant to resolve the query by selecting Not satisfied.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"incompleteappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"To address the inaccuracy, we recommend reaching out to our live assistant. Please ensure you have the following details available to provide to our Customer Care Team:  <br/>1.Applicant’s full name  <br/>2.Application reference number from GOV.UK (usually starts GWF, followed by nine numbers)  <br/>3.Registered email address (as used on GOV.UK and the Visa Hub website)  <br/>4.A copy of the Appointment Confirmation, indicating where information is incomplete or incorrect  <br/>5.Name of the Visa Application Centre you intend to visit for your appointment  <br/>6.Date and time of the appointment you booked\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"visacenter\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Customers can select any Visa Application Centre location within the country of application, before confirming an appointment. If you wish to change your location after an appointment is confirmed, please Cancel your appointment and choose your preferred location.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"inpayment2\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Payment Refund\\\",\\\"options\\\":[{\\\"text\\\":\\\"Apply for refund\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Apply for refund\\\",\\\"nextstep\\\":\\\"applyrefund\\\"},{\\\"text\\\":\\\"Refund for Priority Visa services\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Refund for Priority Visa services\\\",\\\"nextstep\\\":\\\"priorityrefund\\\"},{\\\"text\\\":\\\"Refund for document scanning\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Refund for document scanning\\\",\\\"nextstep\\\":\\\"documentscan\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"applyrefund\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"To initiate a refund request, please follow these steps:  <br/>1.Sign in to your account.  <br/>2.Go to the `My Account` menu and choose `My Applications.`  <br/>3.Enter your reference (GWF) number and the email ID or address associated with your refund request.   <br/>4.Click on the `Refund` link, which will take you to a page displaying your purchased services. <br/>Follow the instructions provided on this page to start your refund request.  <br/><br/>Note: <br/>Refunds processed in 15 days. Approved refunds return within 5 working days. Queries resolved in 7 days. Your cooperation appreciated.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"priorityrefund\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"If UK Visas and Immigration cannot provide a Priority Visa service due to a Visa Hub error, a refund will be assessed as per our standard Terms & Conditions. <br/>If you believe your Priority Visa service was delayed because of a Visa Hub scanning issue, please connect with our live assistant by selecting Not satisfied.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"documentscan\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Sorry for any inconvenience. If you self-uploaded documents or qualify for a Scanning Assistance charge exemption, visit your departure country`s homepage and click `Request a refund` at the bottom.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"incomplaints3\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Complaints\\\",\\\"options\\\":[{\\\"text\\\":\\\"Visa Hub Staff related complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa Hub Staff related complaints\\\",\\\"nextstep\\\":\\\"vsfcomplain\\\"},{\\\"text\\\":\\\"Website related complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Website related complaints\\\",\\\"nextstep\\\":\\\"webcomplain\\\"},{\\\"text\\\":\\\"Complaints regarding Incorrect data and pre-populated fields\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Complaints regarding Incorrect data and pre-populated fields\\\",\\\"nextstep\\\":\\\"incorrectdatacomplain\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"vsfcomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please select Not satisfied and connect with live assistant to raise complaint. If you are still at the Visa Application Centre, you can ask to speak to the Visa Application Centre Manager, who will be able to assist you.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"webcomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"We are sorry that the Visa Hub website wasn’t working when you came to book your appointment. Once the system is back up, applicants will need to follow the regular appointment booking process, and visit the Visa Application Centre on the date or time selected in the appointment booking system.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"incorrectdatacomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"The pre-populated data has come from your application on the UK Visas and Immigration website (GOV.UK). If you find an error, please go back to your application on the UK Visas and Immigration website to amend these details, before returning to Visa Hub to book your biometric appointment.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"inassistance4\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Would you like to connect with us now?\\\",\\\"options\\\":[{\\\"text\\\":\\\"Yes\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Yes\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"No\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"No\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"transfertoagent\\\",\\\"stepid\\\":\\\"2\\\",\\\"media\\\":\\\"chat\\\",\\\"action\\\":\\\"connectcall\\\",\\\"message\\\":\\\"Please wait while we connect you to our customer support assistant.\\\",\\\"nextstep\\\":\\\"\\\"}]\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editFlowdesignByFlowId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n       \"flowid\":3,\n      \"flowname\": \"MovieBotzz\",\n      \"active\": 1,\n      \"flowdetails\": \"[{\\\"step\\\":\\\"firststep\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Hello and welcome to the Visa Hub online assistance service! We`re here to help you with your visa-related questions and concerns. How can we assist you today?\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"},{\\\"step\\\":\\\"satisfied\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Is there anything else I can assist you with?\\\",\\\"options\\\":[{\\\"text\\\":\\\"Yes\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Yes\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"},{\\\"text\\\":\\\"No\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"No\\\",\\\"nextstep\\\":\\\"thanks\\\"}]},{\\\"step\\\":\\\"thanks\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Thank you for chatting with me today! I hope I was able to assist you with your questions and concerns.\\\"},{\\\"step\\\":\\\"notsatified\\\",\\\"action\\\":\\\"showmessage\\\",\\\"message\\\":\\\"Please wait while we connect you to our customer support assistant.\\\"},{\\\"step\\\":\\\"AfterTemplate\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please select query type\\\",\\\"options\\\":[{\\\"text\\\":\\\"Visa Application\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa Application\\\",\\\"nextstep\\\":\\\"invsa1\\\"},{\\\"text\\\":\\\"Payment Refund\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Payment Refund\\\",\\\"nextstep\\\":\\\"inpayment2\\\"},{\\\"text\\\":\\\"Complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Complaints\\\",\\\"nextstep\\\":\\\"incomplaints3\\\"},{\\\"text\\\":\\\"Assistance\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Assistance\\\",\\\"nextstep\\\":\\\"inassistance4\\\"}]},{\\\"step\\\":\\\"invsa1\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Visa Application\\\",\\\"options\\\":[{\\\"text\\\":\\\"Track Application Status\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Track Application Status\\\",\\\"nextstep\\\":\\\"trackapplication\\\"},{\\\"text\\\":\\\"Appointments\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Appointments\\\",\\\"nextstep\\\":\\\"appointments\\\"},{\\\"text\\\":\\\"Visa centre selection\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa centre selection\\\",\\\"nextstep\\\":\\\"visacenter\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"trackapplication\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, click Track application status and you will be able to see the current status of your application.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"appointments\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Appointments\\\",\\\"options\\\":[{\\\"text\\\":\\\"Book appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Book appointment\\\",\\\"nextstep\\\":\\\"bookappointment\\\"},{\\\"text\\\":\\\"Reschedule appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Reschedule appointment\\\",\\\"nextstep\\\":\\\"rescheduleappointment\\\"},{\\\"text\\\":\\\"Unable to book appointment\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Unable to book appointment\\\",\\\"nextstep\\\":\\\"unabletobookappointment\\\"},{\\\"text\\\":\\\"Incomplete appointment confirmation\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Incomplete appointment confirmation\\\",\\\"nextstep\\\":\\\"incompleteappointment\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"bookappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, select Book Appointment, Calendar will appear and now choose the date and time of your choice.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"rescheduleappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Login to your account.<br/>On your Dashboard page, select Manage Appointment, open the Appointment Details section and select Reschedule Appointment and choose the date and time as per your choice.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"unabletobookappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please ensure that there are no problems with your computer or phone (i.e. poor broadband or Wi-Fi connection, old browser versions, etc). If you have confirmed this, and are still having issues then please screenshot the error page(s), and connect with our live assistant to resolve the query by selecting Not satisfied.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"incompleteappointment\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"To address the inaccuracy, we recommend reaching out to our live assistant. Please ensure you have the following details available to provide to our Customer Care Team:  <br/>1.Applicant’s full name  <br/>2.Application reference number from GOV.UK (usually starts GWF, followed by nine numbers)  <br/>3.Registered email address (as used on GOV.UK and the Visa Hub website)  <br/>4.A copy of the Appointment Confirmation, indicating where information is incomplete or incorrect  <br/>5.Name of the Visa Application Centre you intend to visit for your appointment  <br/>6.Date and time of the appointment you booked\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"appointments\\\"}]},{\\\"step\\\":\\\"visacenter\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Customers can select any Visa Application Centre location within the country of application, before confirming an appointment. If you wish to change your location after an appointment is confirmed, please Cancel your appointment and choose your preferred location.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Sub menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Sub menu\\\",\\\"nextstep\\\":\\\"invsa1\\\"}]},{\\\"step\\\":\\\"inpayment2\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Payment Refund\\\",\\\"options\\\":[{\\\"text\\\":\\\"Apply for refund\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Apply for refund\\\",\\\"nextstep\\\":\\\"applyrefund\\\"},{\\\"text\\\":\\\"Refund for Priority Visa services\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Refund for Priority Visa services\\\",\\\"nextstep\\\":\\\"priorityrefund\\\"},{\\\"text\\\":\\\"Refund for document scanning\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Refund for document scanning\\\",\\\"nextstep\\\":\\\"documentscan\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"applyrefund\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"To initiate a refund request, please follow these steps:  <br/>1.Sign in to your account.  <br/>2.Go to the `My Account` menu and choose `My Applications.`  <br/>3.Enter your reference (GWF) number and the email ID or address associated with your refund request.   <br/>4.Click on the `Refund` link, which will take you to a page displaying your purchased services. <br/>Follow the instructions provided on this page to start your refund request.  <br/><br/>Note: <br/>Refunds processed in 15 days. Approved refunds return within 5 working days. Queries resolved in 7 days. Your cooperation appreciated.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"priorityrefund\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"If UK Visas and Immigration cannot provide a Priority Visa service due to a Visa Hub error, a refund will be assessed as per our standard Terms & Conditions. <br/>If you believe your Priority Visa service was delayed because of a Visa Hub scanning issue, please connect with our live assistant by selecting Not satisfied.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"documentscan\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Sorry for any inconvenience. If you self-uploaded documents or qualify for a Scanning Assistance charge exemption, visit your departure country`s homepage and click `Request a refund` at the bottom.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"incomplaints3\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Complaints\\\",\\\"options\\\":[{\\\"text\\\":\\\"Visa Hub Staff related complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Visa Hub Staff related complaints\\\",\\\"nextstep\\\":\\\"vsfcomplain\\\"},{\\\"text\\\":\\\"Website related complaints\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Website related complaints\\\",\\\"nextstep\\\":\\\"webcomplain\\\"},{\\\"text\\\":\\\"Complaints regarding Incorrect data and pre-populated fields\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Complaints regarding Incorrect data and pre-populated fields\\\",\\\"nextstep\\\":\\\"incorrectdatacomplain\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"vsfcomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Please select Not satisfied and connect with live assistant to raise complaint. If you are still at the Visa Application Centre, you can ask to speak to the Visa Application Centre Manager, who will be able to assist you.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"webcomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"We are sorry that the Visa Hub website wasn’t working when you came to book your appointment. Once the system is back up, applicants will need to follow the regular appointment booking process, and visit the Visa Application Centre on the date or time selected in the appointment booking system.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"incorrectdatacomplain\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"The pre-populated data has come from your application on the UK Visas and Immigration website (GOV.UK). If you find an error, please go back to your application on the UK Visas and Immigration website to amend these details, before returning to Visa Hub to book your biometric appointment.\\\",\\\"options\\\":[{\\\"text\\\":\\\"Satisfied 👍\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Satisfied 👍\\\",\\\"nextstep\\\":\\\"satisfied\\\"},{\\\"text\\\":\\\"Not satisfied 👎\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Not satisfied 👎\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"Back to Main menu\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Back to Main menu\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"inassistance4\\\",\\\"action\\\":\\\"showoptions\\\",\\\"message\\\":\\\"Would you like to connect with us now?\\\",\\\"options\\\":[{\\\"text\\\":\\\"Yes\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"Yes\\\",\\\"nextstep\\\":\\\"transfertoagent\\\"},{\\\"text\\\":\\\"No\\\",\\\"type\\\":\\\"button\\\",\\\"title\\\":\\\"No\\\",\\\"nextstep\\\":\\\"AfterTemplate\\\"}]},{\\\"step\\\":\\\"transfertoagent\\\",\\\"stepid\\\":\\\"2\\\",\\\"media\\\":\\\"chat\\\",\\\"action\\\":\\\"connectcall\\\",\\\"message\\\":\\\"Please wait while we connect you to our customer support assistant.\\\",\\\"nextstep\\\":\\\"\\\"}]\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/editbyid",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"editbyid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFlowDesign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/flowdesign_all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"flowdesign_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlowdesignByname",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/flowname/MovieBotzz",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"flowname",
+						"MovieBotzz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteFlowdesignByFlowid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/flowid/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"flowid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlowdesignByFlowid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/flowid/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"flowid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getFlowdesignByFlowname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/flowname/moviebiz",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"flowname",
+						"moviebiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVersion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/version",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFlowDesign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"flowname\": \"MovieBotzz\",\n      \"active\": 1,\n      \"flowdetails\":\"THis is Moviebot Flow\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TotalCountDocument",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/flowdesign/count",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"flowdesign",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
